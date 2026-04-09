@@ -194,6 +194,67 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-20 bg-white/50 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Meet Our Team
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Dedicated professionals behind SmartBudget
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                name: 'Azhar Mehmood',
+                id: 'B01836266',
+                image: '/azhar.jpeg',
+              },
+              {
+                name: 'Noelin Enyima Quardson',
+                id: 'B01836533',
+                image: '/Noelin.jpeg',
+              },
+              {
+                name: 'Muhammad Naveed',
+                id: 'B01835956',
+                image: '/Naveed.jpeg',
+              },
+              {
+                name: 'Maureen Okerio',
+                id: 'b01837317',
+                image: '/Maureen.jpeg',
+              },
+            ].map((member, index) => (
+              <Card
+                key={index}
+                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white overflow-hidden"
+              >
+                <div className="relative">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-72 object-cover object-bottom"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm text-emerald-600 font-medium">
+                    {member.id}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-12 shadow-2xl">
